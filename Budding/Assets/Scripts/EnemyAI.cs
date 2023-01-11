@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        UpdateDestination();
     }
     
     void Update()
