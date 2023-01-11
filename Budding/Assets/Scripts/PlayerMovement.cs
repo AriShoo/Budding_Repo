@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 3;
+    //Variables declared
+    public float speed = 5;
     public float rotationSpeed = 90;
     public float gravity = -20f;
     public float jumpSpeed = 15;
@@ -14,11 +16,27 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveVelocity;
     Vector3 turnVelocity;
 
+    //Adding ability to animate the movement of the player
+    Animator animator;
+
+    //These are used for the player to stop moving when they have died in game so that the player 
+    // no longer controls the character
+    private void OnEnable()
+    {
+        PlayerHealth.OnPlayerDeath += DisablePlayerMovement;
+    }
+
+    private void OnDisable()
+    {
+        PlayerHealth.OnPlayerDeath -= DisablePlayerMovement;
+    }
+    // ------------------------------------------------------------------- //
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
-
+    // ------------------------------------------------------------------- //
     void Update()
     {
         var x_axis = Input.GetAxis("Horizontal");
@@ -34,9 +52,20 @@ public class PlayerMovement : MonoBehaviour
                 moveVelocity.y = jumpSpeed;
             }
         }
-        //Adding gravity
+    //Adding gravity // ------------------------------------------------------------------- //
         moveVelocity.y += gravity * Time.deltaTime; 
         characterController.Move(moveVelocity * Time.deltaTime);
         transform.Rotate(turnVelocity * Time.deltaTime);
+    }
+
+    // Used in conjunction with the Game Over screen and the above OnEnable/OnDisable //
+    private void DisablePlayerMovement()
+    {
+        speed = 0;
+    }
+
+    private void EnablePlayerMovement()
+    {
+        speed = 5;
     }
 }

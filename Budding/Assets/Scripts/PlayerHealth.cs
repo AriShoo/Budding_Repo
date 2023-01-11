@@ -10,11 +10,15 @@ public class PlayerHealth : MonoBehaviour
     public float MaxHitPoints = 100;
     public HealthBarBehave HealthBar;
     
+// ------------------------------------------------------------------- //
+
     void Start()
     {
         HitPoints = MaxHitPoints;
         HealthBar.SetHealth(HitPoints,  MaxHitPoints);
     }
+
+// ------------------------------------------------------------------- //
 
     public void  TakeDamage(float damage)
     {
