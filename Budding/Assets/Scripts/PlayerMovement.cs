@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // no longer controls the character
     private void OnEnable()
     {
+        characterController.enabled = true;
         PlayerHealth.OnPlayerDeath += DisablePlayerMovement;
     }
 
