@@ -47,12 +47,14 @@ public class PlayerMovement : MonoBehaviour
             moveVelocity = transform.forward * speed * y_axis;
             turnVelocity = transform.up * rotationSpeed * x_axis;
 
-            if(Input.GetButtonDown("Jump"))
-            {
-                moveVelocity.y = jumpSpeed;
-            }
         }
-    //Adding gravity // ------------------------------------------------------------------- //
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            moveVelocity.y = jumpSpeed;
+        }
+
+        //Adding gravity // ------------------------------------------------------------------- //
         moveVelocity.y += gravity * Time.deltaTime; 
         characterController.Move(moveVelocity * Time.deltaTime);
         transform.Rotate(turnVelocity * Time.deltaTime);
