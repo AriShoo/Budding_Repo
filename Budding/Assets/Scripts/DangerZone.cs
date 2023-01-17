@@ -2,36 +2,33 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DangerZone : MonoBehaviour
 {
-    public float countdown = 5;
-    public bool countdownStart;
+    float currentTime = 0f;
+    float startingTime = 5f;
+
+    [SerializeField] Text countdownText;
 
     void OnCollisionEnter(Collision collision)
     {
-        countdownStart = true;
+        currentTime = startingTime;
     }
 
     void OnCollisionExit(Collision collision)
     {
-        countdown = 0;
-        countdownStart = false;
+        currentTime = 0f;
     }
 
-    void update()
-    {
-        if (countdown > 0)
-        {
-            countdown -= Time.deltaTime;
-        }
-
-        else
-        {
-            Debug.Log("You're out of time!");
-            countdown = 0;
-            countdownStart = false;
-
-        }
-    }
+   // void Update()
+   // {
+    //    currentTime -= 1 * Time.deltaTime;
+   //     countdownText.text = currentTime.ToString("0");
+//
+   //     if (currentTime <= 0)
+   //     {
+   //         currentTime = 0;
+   //     }
+   // }
 }
