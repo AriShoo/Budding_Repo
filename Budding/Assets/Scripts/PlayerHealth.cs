@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
 // ------------------------------------------------------------------- //
 
-    public void  TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         HitPoints -= damage;   
 

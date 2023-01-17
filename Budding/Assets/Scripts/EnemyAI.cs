@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     UnityEngine.AI.NavMeshAgent agent;
+    GameObject Player;
+    public int damage;
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
@@ -35,6 +37,13 @@ public class EnemyAI : MonoBehaviour
         if(waypointIndex== waypoints.Length)
         {
             waypointIndex = 0;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Player.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 }

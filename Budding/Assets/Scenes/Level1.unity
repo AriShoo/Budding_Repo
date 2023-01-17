@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e1692a7e9182141af8da3f8c45218e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   waypoints:
   - {fileID: 540136692}
   - {fileID: 1465605750}
@@ -1493,6 +1494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e1692a7e9182141af8da3f8c45218e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   waypoints:
   - {fileID: 158615359}
   - {fileID: 1121141322}
@@ -2226,8 +2228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8fa609406f8e8419b9a68523600041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 5
-  countdownStart: 0
+  countdownText: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -15969,6 +15970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e1692a7e9182141af8da3f8c45218e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   waypoints:
   - {fileID: 1103491341}
   - {fileID: 275473136}
@@ -16028,7 +16030,7 @@ GameObject:
   - component: {fileID: 1632134688}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
