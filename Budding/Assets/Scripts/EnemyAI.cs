@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,6 +45,7 @@ public class EnemyAI : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Player.GetComponent<PlayerHealth>().TakeDamage(damage);
+
         }
     }
 }
