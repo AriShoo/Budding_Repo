@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         HitPoints = MaxHitPoints;
-        HealthBar.SetHealth(HitPoints,  MaxHitPoints);
+        HealthBar.SetHealth(HitPoints, MaxHitPoints);
     }
 
 // ------------------------------------------------------------------- //
