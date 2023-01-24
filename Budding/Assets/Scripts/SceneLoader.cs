@@ -23,4 +23,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(HighScores);
     }
+    public void LoadCred(string Credits)
+    {
+        SceneManager.LoadScene(Credits);
+    }
 }

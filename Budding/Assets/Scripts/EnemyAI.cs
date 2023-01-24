@@ -40,12 +40,5 @@ public class EnemyAI : MonoBehaviour
             waypointIndex = 0;
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            Player.GetComponent<PlayerHealth>().TakeDamage(damage);
-
-        }
-    }
+    
 }

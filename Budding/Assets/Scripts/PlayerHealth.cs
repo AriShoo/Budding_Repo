@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public float HitPoints;
     public float MaxHitPoints = 100;
     public HealthBarBehave HealthBar;
+    public float invincibiltyDur = 1f;
+    private float lastHitTime = 0f;
     
 // ------------------------------------------------------------------- //
 
@@ -23,13 +25,35 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        HitPoints -= damage;   
+        if(Time.time < lastHitTime + invincibiltyDur)
+        {
+            return;
+        }
+
+        HitPoints -= damage;
+        lastHitTime = Time.time;
 
         if (HitPoints <= 0)
         {
             HitPoints = 0;
-            //Display game over screen
-            OnPlayerDeath?.Invoke();
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //Display game over screen
+        HitPoints = 0;
+        OnPlayerDeath?.Invoke();
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        EnemyAI enemyAI = hit.collider.GetComponent<EnemyAI>();
+        if (enemyAI != null)
+        {
+            TakeDamage(enemyAI.damage);
+
         }
     }
 }
