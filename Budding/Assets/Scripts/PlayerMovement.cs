@@ -35,9 +35,16 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+       
     }
     // ------------------------------------------------------------------- //
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+
+    }
+
     void Update()
     {
         var x_axis = Input.GetAxis("Horizontal");
@@ -50,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+
         if (Input.GetButtonDown("Jump"))
         {
             moveVelocity.y = jumpSpeed;
@@ -60,15 +68,8 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(moveVelocity * Time.deltaTime);
         transform.Rotate(turnVelocity * Time.deltaTime);
 
-        //Adding animation// ------------------------------------------------------------------ //
-        CharacterController ourCharacter = GetComponent<CharacterController>();
-
-        float currentSpeedH = ourCharacter.velocity.x;
-        float currentSpeedV = ourCharacter.velocity.y;
-
-        Animator ourAnimator = GetComponent<Animator>();
-        ourAnimator.SetFloat("speedH", currentSpeedH);
-        ourAnimator.SetFloat("speedV", currentSpeedV);
+        animator.SetFloat("speed", Mathf.Abs( y_axis)) ;
+ 
     }
 
     // Used in conjunction with the Game Over screen and the above OnEnable/OnDisable //
