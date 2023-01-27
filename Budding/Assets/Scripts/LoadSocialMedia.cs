@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class LoadSocialMedia : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        Application.OpenURL("https://ari-shoo-designs.carrd.co/");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
