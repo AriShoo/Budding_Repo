@@ -59,6 +59,16 @@ public class PlayerMovement : MonoBehaviour
         moveVelocity.y += gravity * Time.deltaTime; 
         characterController.Move(moveVelocity * Time.deltaTime);
         transform.Rotate(turnVelocity * Time.deltaTime);
+
+        //Adding animation// ------------------------------------------------------------------ //
+        CharacterController ourCharacter = GetComponent<CharacterController>();
+
+        float currentSpeedH = ourCharacter.velocity.x;
+        float currentSpeedV = ourCharacter.velocity.y;
+
+        Animator ourAnimator = GetComponent<Animator>();
+        ourAnimator.SetFloat("speedH", currentSpeedH);
+        ourAnimator.SetFloat("speedV", currentSpeedV);
     }
 
     // Used in conjunction with the Game Over screen and the above OnEnable/OnDisable //

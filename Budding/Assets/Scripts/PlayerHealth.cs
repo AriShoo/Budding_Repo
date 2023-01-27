@@ -38,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
             HitPoints = 0;
             Die();
         }
+
+        HealthBar.SetHealth(HitPoints, MaxHitPoints);
     }
 
     public void Die()
