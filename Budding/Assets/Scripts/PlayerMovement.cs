@@ -72,12 +72,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Used in conjunction with the Game Over screen and the above OnEnable/OnDisable //
-    private void DisablePlayerMovement()
+    public void DisablePlayerMovement()
     {
         speed = 0;
+        animator.enabled = false;
     }
 
-    private void EnablePlayerMovement()
+    public void EnablePlayerMovement()
     {
         speed = 5;
     }

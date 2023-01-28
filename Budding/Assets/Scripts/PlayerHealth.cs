@@ -47,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
         //Display game over screen
         HitPoints = 0;
         OnPlayerDeath?.Invoke();
+        
     }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)

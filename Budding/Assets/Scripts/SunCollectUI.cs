@@ -14,6 +14,6 @@ public class SunCollectUI : MonoBehaviour
 
     public void UpdateWaterText(PlayerInventory playerInventory)
     {
-        sunText.text = playerInventory.AmountOfWater.ToString();
+        sunText.text = playerInventory.AmountOfSun.ToString();
     }
 }

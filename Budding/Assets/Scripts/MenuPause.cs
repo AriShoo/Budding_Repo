@@ -47,21 +47,27 @@ public class MenuPause : MonoBehaviour
 
     public void resumeGame()
     {
+        Input.GetButtonDown("Jump");
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+    
     }
 
     public void GoToMainMenu()
     {
+        Input.GetButtonDown("Jump");
         isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        
     }
 
     public void QuitGame()
     {
+        Input.GetButtonDown("Jump");
         Application.Quit();
+        
     }
 
 }
