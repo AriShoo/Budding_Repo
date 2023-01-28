@@ -180,7 +180,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 828758049}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 828758049}
     m_SelectOnLeft: {fileID: 1068553783}
     m_SelectOnRight: {fileID: 249919048}
   m_Transition: 1
@@ -488,7 +488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 249919049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &249919049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,7 +1030,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 183413350}
     m_SelectOnDown: {fileID: 183413350}
     m_SelectOnLeft: {fileID: 1954408720}
     m_SelectOnRight: {fileID: 0}
@@ -1199,6 +1211,7 @@ GameObject:
   - component: {fileID: 1068553785}
   - component: {fileID: 1068553784}
   - component: {fileID: 1068553783}
+  - component: {fileID: 1068553786}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1270,7 +1283,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1068553784}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1068553786}
+        m_TargetAssemblyTypeName: LoadCredits, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Load Credits
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1068553784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,6 +1334,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068553781}
   m_CullTransparentMesh: 1
+--- !u!114 &1068553786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068553781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21a84ebeaf1dfd4ead398b87b6825b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238180829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,13 +2032,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954408718}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1954408723}
+        m_TargetAssemblyTypeName: LoadSocialMedia, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2057,3 +2094,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a502e45f5b7034aac351bfe834ae55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Url: 

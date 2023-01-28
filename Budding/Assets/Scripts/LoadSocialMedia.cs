@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class LoadSocialMedia : MonoBehaviour
 {
-    void Start()
+    public string Url;
+
+    public void Open()
     {
         Application.OpenURL("https://ari-shoo-designs.carrd.co/");
     }
