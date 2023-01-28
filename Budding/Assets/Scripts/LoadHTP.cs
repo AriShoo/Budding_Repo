@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadHTP : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public void LoadScene(string HowToPlay)
     {
         SceneManager.LoadScene("HowToPlay");
     }

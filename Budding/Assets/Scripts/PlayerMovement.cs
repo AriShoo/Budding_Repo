@@ -50,26 +50,25 @@ public class PlayerMovement : MonoBehaviour
         var x_axis = Input.GetAxis("Horizontal");
         var y_axis = Input.GetAxis("Vertical");
 
-        if(characterController.isGrounded)
-        {
-            moveVelocity = transform.forward * speed * y_axis;
-            turnVelocity = transform.up * rotationSpeed * x_axis;
+            if (characterController.isGrounded)
+            {
+                moveVelocity = transform.forward * speed * y_axis;
+                turnVelocity = transform.up * rotationSpeed * x_axis;
 
-        }
+            }
 
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            moveVelocity.y = jumpSpeed;
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                moveVelocity.y = jumpSpeed;
+            }
 
-        //Adding gravity // ------------------------------------------------------------------- //
-        moveVelocity.y += gravity * Time.deltaTime; 
-        characterController.Move(moveVelocity * Time.deltaTime);
-        transform.Rotate(turnVelocity * Time.deltaTime);
+            //Adding gravity // ------------------------------------------------------------------- //
+            moveVelocity.y += gravity * Time.deltaTime;
+            characterController.Move(moveVelocity * Time.deltaTime);
+            transform.Rotate(turnVelocity * Time.deltaTime);
 
-        animator.SetFloat("speed", Mathf.Abs( y_axis)) ;
- 
+            animator.SetFloat("speed", Mathf.Abs(y_axis));
     }
 
     // Used in conjunction with the Game Over screen and the above OnEnable/OnDisable //
