@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DangerZone : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class DangerZone : MonoBehaviour
             {
                 currentTime = 0;
                 player.Die();
-                // Once game over scene is made, load it here
+                SceneManager.LoadScene("GameOver");
             }
 
             //countdownText.text = currentTime.ToString("0"); -- need to add

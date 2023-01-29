@@ -21,16 +21,16 @@ public class PlayerMovement : MonoBehaviour
 
     //These are used for the player to stop moving when they have died in game so that the player 
     // no longer controls the character
-    private void OnEnable()
-    {
-        characterController.enabled = true;
-        PlayerHealth.OnPlayerDeath += DisablePlayerMovement;
-    }
+    //private void OnEnable()
+   // {
+    //    characterController.enabled = true;
+        //PlayerHealth.OnPlayerDeath += DisablePlayerMovement;
+   // }
 
-    private void OnDisable()
-    {
-        PlayerHealth.OnPlayerDeath -= DisablePlayerMovement;
-    }
+    //private void OnDisable()
+   // {
+        //PlayerHealth.OnPlayerDeath -= DisablePlayerMovement;
+   // }
     // ------------------------------------------------------------------- //
     void Awake()
     {

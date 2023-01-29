@@ -12,7 +12,7 @@ public class SunCollectUI : MonoBehaviour
         sunText = GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdateWaterText(PlayerInventory playerInventory)
+    public void UpdateSunText(PlayerInventory playerInventory)
     {
         sunText.text = playerInventory.AmountOfSun.ToString();
     }

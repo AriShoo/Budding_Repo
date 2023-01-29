@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static event Action OnPlayerDeath;
+    //public static event Action OnPlayerDeath;
     public float HitPoints;
     public float MaxHitPoints = 100;
     public HealthBarBehave HealthBar;
@@ -44,9 +44,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        //Display game over screen
         HitPoints = 0;
-        OnPlayerDeath?.Invoke();
+       // OnPlayerDeath?.Invoke();
+        SceneManager.LoadScene("GameOver");
         
     }
 
