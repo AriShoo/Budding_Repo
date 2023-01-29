@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -20f;
     public float jumpSpeed = 15;
 
+    public AudioSource waterCollect;
+    public AudioSource sunCollect;
     CharacterController characterController;
     Vector3 moveVelocity;
     Vector3 turnVelocity;
@@ -81,5 +83,17 @@ public class PlayerMovement : MonoBehaviour
     public void EnablePlayerMovement()
     {
         speed = 5;
+    }
+
+    public void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.tag == "SunDrop")
+        {
+            sunCollect.Play();
+        }
+        if(collision.gameObject.tag == "WaterDrop")
+        {
+            waterCollect.Play();
+        }
     }
 }

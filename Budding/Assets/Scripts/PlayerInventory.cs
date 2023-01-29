@@ -13,25 +13,19 @@ public class PlayerInventory : MonoBehaviour
     public UnityEvent<PlayerInventory> OnSunCollected;
  //   public WaterCollectUI WaterCollect;
 
-    public void Start()
-    {
-        AmountOfSun = 0;
-        AmountOfWater = 0;
-    }
-
     public void WaterCollected()
     {
-        AmountOfWater = AmountOfWater + 1;
+        AmountOfWater++;
         OnWaterCollected.Invoke(this);
     }
 
     public void SunCollected()
     {
-        AmountOfSun = AmountOfSun + 1;
+        AmountOfSun++;
         OnSunCollected.Invoke(this);
     }
 
-    public void winState()
+    void Update()
     {
         if(AmountOfSun == 4 && AmountOfWater == 4)
         {
